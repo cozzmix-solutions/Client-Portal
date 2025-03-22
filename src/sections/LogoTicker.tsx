@@ -7,9 +7,12 @@ import convrtLogo from "@/assets/logo-convrt.png";
 import { motion } from "framer-motion";
 import CaseStudies from "@/components/ui/casestudies";
 import {Button } from "@heroui/button";
-
+import { useRouter } from "next/navigation";
 
 export const LogoTicker = ({caseStudy}: any) => {
+
+  
+  const router = useRouter();
 
   const displayedCards = caseStudy.slice(0, 2);
 
@@ -61,7 +64,9 @@ export const LogoTicker = ({caseStudy}: any) => {
           ))}
         </div>
         <div className="m-4 md:m-8 w-full flex justify-center items-center">
-        <Button radius="full" color="default">SHOW MORE</Button>
+        <Button 
+    onPress={() => router.push(`/casestudy`)}
+        radius="full" color="default">SHOW MORE</Button>
         </div>
       </div>
     </section>
